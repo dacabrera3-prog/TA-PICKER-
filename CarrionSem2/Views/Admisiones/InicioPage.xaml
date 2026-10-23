@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrionSem2.Views.Admisiones.InicioPage"
+             BackgroundColor="#f4f6fb"
+             Title="Registro">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="18">
+
+            <Border BackgroundColor="#ffffff"
+                    Stroke="#e6edf5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 24"
+                    Padding="26,22"
+                    Margin="0,12,0,0">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Registro académico"
+                           FontSize="34"
+                           FontAttributes="Bold"
+                           TextColor="#1b2430" />
+
+                    <Label Text="Completa tus datos para iniciar tu proceso de inscripción."
+                           FontSize="14"
+                           TextColor="#5d6d7d" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Grid ColumnDefinitions="2.1*,0.9*" ColumnSpacing="24" MaximumWidthRequest="1200" HorizontalOptions="Center">
+
+                <Border Grid.Column="0"
+                        BackgroundColor="#ffffff"
+                        Stroke="#e9edf4"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 26"
+                        Padding="22,20">
+
+                    <VerticalStackLayout Spacing="18">
+                        <Border BackgroundColor="#eef7ff"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="12,8"
+                                HorizontalOptions="Start">
+                            <Label Text="Formulario de matrícula"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#0a6d9d" />
+                        </Border>
+
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                              ColumnDefinitions="170,*,*"
+                              ColumnSpacing="12"
+                              RowSpacing="14">
+
+                             <Label Text="Identificación:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Picker x:Name="TipoIdentificacionPicker" Grid.Row="0" Grid.Column="1" Title="Selecciona" TextColor="#1b2430" BackgroundColor="#f7f9fc" TitleColor="#7a8797">
+                                <Picker.Items>
+                                    <x:String>CÉDULA</x:String>
+                                    <x:String>PASAPORTE</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Entry x:Name="NumeroIdentificacionEntry" Grid.Row="0" Grid.Column="2" Placeholder="Número" Keyboard="Numeric" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+
+                            <Label Text="Apellidos:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Entry x:Name="ApellidoPaternoEntry" Grid.Row="1" Grid.Column="1" Placeholder="Paterno" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+                            <Entry x:Name="ApellidoMaternoEntry" Grid.Row="1" Grid.Column="2" Placeholder="Materno" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+
+                            <Label Text="Nombres completos:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Entry x:Name="NombresEntry" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Tu nombre completo" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+
+                            <Label Text="Teléfono personal:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Entry x:Name="TelefonoEntry" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Ej. 0999999999" Keyboard="Telephone" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+
+                            <Label Text="Correo personal:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Entry x:Name="CorreoEntry" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="correo@ejemplo.com" Keyboard="Email" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+
+                            <Label Text="Confirmar correo:" Grid.Row="5" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Entry x:Name="ConfirmarCorreoEntry" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Confirma tu correo" Keyboard="Email" TextColor="#1b2430" BackgroundColor="#f7f9fc" PlaceholderColor="#8aa0b2" />
+                        </Grid>
+
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                              ColumnDefinitions="140,*"
+                              ColumnSpacing="12"
+                              RowSpacing="14">
+
+                             <Label Text="Carrera:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Picker x:Name="CarreraPicker" Grid.Row="0" Grid.Column="1" Title="Selecciona una carrera" TextColor="#1b2430" BackgroundColor="#f7f9fc" TitleColor="#7a8797">
+                                <Picker.Items>
+                                    <x:String>Ingeniería de Sistemas</x:String>
+                                    <x:String>Administración</x:String>
+                                    <x:String>Diseño Gráfico</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+                            <Label Text="Modalidad:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Picker x:Name="ModalidadPicker" Grid.Row="1" Grid.Column="1" Title="Selecciona" TextColor="#1b2430" BackgroundColor="#f7f9fc" TitleColor="#7a8797">
+                                <Picker.Items>
+                                    <x:String>Presencial</x:String>
+                                    <x:String>Virtual</x:String>
+                                    <x:String>Híbrida</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+                            <Label Text="Campus:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" TextColor="#2f4053" FontSize="14" />
+                            <Picker x:Name="CampusPicker" Grid.Row="2" Grid.Column="1" Title="Selecciona tu campus" TextColor="#1b2430" BackgroundColor="#f7f9fc" TitleColor="#7a8797">
+                                <Picker.Items>
+                                    <x:String>Quito</x:String>
+                                    <x:String>Guayaquil</x:String>
+                                    <x:String>Cuenca</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Grid>
+
+                        <Button x:Name="EnviarButton"
+                                Text="Enviar inscripción"
+                                BackgroundColor="#0d6efd"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="14"
+                                HeightRequest="52"
+                                Margin="0,8,0,0"
+                                Clicked="OnEnviarClicked" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="18">
+                    <Border BackgroundColor="#1b2430"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 24"
+                            Padding="20,18">
+                        <VerticalStackLayout Spacing="14">
+                            <Label Text="Resumen"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                            <Border BackgroundColor="#2e3e52"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="10,8">
+                                <Label Text="Próximo paso"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="#dfeaf7" />
+                            </Border>
+
+                            <Label Text="Revisa tus datos y confirma tu inscripción en la siguiente etapa."
+                                   FontSize="13"
+                                   TextColor="#dfeaf7" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border BackgroundColor="#ffffff"
+                            Stroke="#e9edf4"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 24"
+                            Padding="18,16">
+                        <VerticalStackLayout Spacing="12">
+                            <Label Text="Contacto"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="#1b2430" />
+
+                            <Label Text="📞 055 482 1197" TextColor="#455b70" FontSize="13" />
+                            <Label Text="📱 04 215 8801 - Ext. 204/205" TextColor="#455b70" FontSize="13" />
+                            <Label Text="✉️ apoyo@academiaonline.edu" TextColor="#455b70" FontSize="13" />
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
